@@ -13,11 +13,11 @@ class ColemandoRatchetioBundle extends Bundle
             $access_token = $this->container->getParameter('colemando_ratchetio.access_token');
             $env          = $this->container->getParameter('kernel.environment');
 
-            \Ratchetio::init([
+            \Ratchetio::init(array(
                 'access_token' => $access_token,
                 'environment'  => 'prod' !== $env ? 'development' : 'production',
                 'host'         => php_uname('n')
-            ]);
+            ));
         }
     }
 }
